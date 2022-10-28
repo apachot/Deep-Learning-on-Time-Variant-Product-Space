@@ -5,7 +5,7 @@ location_id = pd.unique(data['location_id'])
 location_code = pd.unique(data['location_code'])
 years = pd.unique(data['year'])
 for location in location_code:
-	location_folder = "./input/"+str(location)
+	location_folder = "./input/exports/"+str(location)
 	if not os.path.exists(location_folder):
 		os.makedirs(location_folder)
 	for year in years:

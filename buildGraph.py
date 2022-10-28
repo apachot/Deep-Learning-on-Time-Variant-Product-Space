@@ -51,7 +51,7 @@ for t in range(2000):
 print(f'Result: y = {a.item()} + {b.item()} x + {c.item()} x^2 + {d.item()} x^3')
 '''
 print("hello world")
-
+'''
 
 
 
@@ -63,3 +63,4 @@ x = torch.tensor([[-1], [0], [1]], dtype=torch.float)
 
 data = Data(x=x, edge_index=edge_index.t().contiguous())
 print(data)
+'''
