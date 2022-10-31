@@ -15,7 +15,7 @@ frames = pd.DataFrame(data['export_value'])
 frames['import_value'] = data['import_value']
 
 print(frames.head())
-data_normalized = preprocessing.normalize(frames, axis=0)
+data_normalized = preprocessing.normalize(frames, axis=1)
 print(data_normalized)
 data['export_value'] = data_normalized[:,0]
 data['import_value'] = data_normalized[:,1]

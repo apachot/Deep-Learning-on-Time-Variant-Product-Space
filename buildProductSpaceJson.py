@@ -58,7 +58,7 @@ del data['source']
 myweights = data.to_numpy().transpose()[0].tolist()
 
 #print(myweights)
-
+country_list = ['AUS']
 for country in country_list:
 	print("country", country)
 	myFX = []
@@ -71,8 +71,8 @@ for country in country_list:
 
 
 	#print("myFX", myFX)
-	myFX = preprocessing.normalize(myFX, axis=0)
-	myFX = myFX.tolist()
+	#myFX = preprocessing.normalize(myFX, axis=0)
+	#myFX = myFX.tolist()
 	#print("myFX", myFX)
 
 
@@ -82,7 +82,7 @@ for country in country_list:
 	    "weights": myweights,
 	    "X": myFX
 	}
-	json_name = "./dataset/productspace_"+country+".json"
+	json_name = "./dataset/productspace.json"
 	print("writing", json_name, "...")
 	with open(json_name, "w") as outfile:
 	    json.dump(dictionary, outfile)

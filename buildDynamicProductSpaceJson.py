@@ -5,14 +5,15 @@ import math
 from sklearn import preprocessing
 
 # edges
+country="AUS"
 
-datatemp = pd.read_csv('./input/exports/FRA/exports_FRA_1995.csv')
+datatemp = pd.read_csv('./input/exports/FRA/exports_FRA_2020.csv')
 country_list = pd.read_csv('./input/country_list.csv', header=None, index_col=False).values
 country_list = [i[0] for i in country_list]
 print("country_list", country_list)
 product_id = pd.unique(datatemp['product_id']).tolist()
 hs_product_code = pd.unique(datatemp['hs_product_code']).tolist()
-
+print("hs_product_code", hs_product_code)
 mynode_ids = pd.DataFrame(product_id, index=hs_product_code).to_dict()[0]
 #print(mynode_ids)
 
@@ -26,7 +27,7 @@ mynode_ids = pd.DataFrame(product_id, index=hs_product_code).to_dict()[0]
 #datatemp = datatemp[(datatemp['location_id'] == location_id[i]) & (data['hs_product_code'] == hs_product_code[j])]
 #print(myedges)
 
-country="FRA"
+
 dictionary = {}
 for k in range(0, 26):
 
